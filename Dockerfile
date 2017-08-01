@@ -12,6 +12,11 @@ RUN wget -P /opt https://s3-us-west-2.amazonaws.com/wso2-stratos/wso2am-${APIM_V
     apt-get clean && \
     unzip /opt/wso2am-${APIM_VERSION}.zip -d /opt && \
     rm /opt/wso2am-${APIM_VERSION}.zip
+rm -rf /opt/wso2am-2.0.0/repository/conf/carbon.xml
+rm -rf /opt/wso2am-2.0.0/repository/conf/api-manager.xml
+
+COPY carbon.xml /opt/wso2am-2.0.0/repository/conf/
+COPY api-manager.xml /opt/wso2am-2.0.0/repository/conf/
 
 EXPOSE 9443 9763 8243 8280 10397 7711
 WORKDIR /opt/wso2am-${APIM_VERSION}
