@@ -11,7 +11,7 @@ RUN wget -P /opt https://s3-us-west-2.amazonaws.com/wso2-stratos/wso2am-${APIM_V
     apt-get install -y zip && \
     apt-get clean && \
     unzip /opt/wso2am-${APIM_VERSION}.zip -d /opt && \
-    rm /opt/wso2am-${APIM_VERSION}.zip
+    rm -rf /opt/wso2am-${APIM_VERSION}.zip
 rm -rf /opt/wso2am-2.0.0/repository/conf/carbon.xml
 rm -rf /opt/wso2am-2.0.0/repository/conf/api-manager.xml
 
